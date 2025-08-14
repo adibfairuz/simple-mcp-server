@@ -1,0 +1,15 @@
+{
+  "name": "demo-mcp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "zod": "^3.25.76"
+  }
+}
