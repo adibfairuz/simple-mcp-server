@@ -59,6 +59,35 @@ server.registerResource(
   }
 )
 
+server.registerPrompt(
+  "generate-fake-user",
+  {
+    title: "generate fake user",
+    description: "generate a fake user based on a given name",
+    argsSchema: {
+      name: z.string()
+    }
+  },
+  ({ name }) => ({
+    messages: [
+      {
+        role: "user",
+        content: {
+          type: "text",
+          text: `generate fake user with the name ${name}. the user should have realistic email, and address`
+        }
+      },
+      {
+        role: "user",
+        content: {
+          type: "text",
+          text: "the result is json. this is the result of json schema { name, email, address }"
+        }
+      },
+    ]
+  })
+)
+
 async function startServer() {
   try {
     const transport = new StdioServerTransport();
